@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Bed Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            margin: 0;
+            padding: 0;
+        }
+
+h1 {
+            text-align: center;
+            color: #fffafa;
+            margin-bottom: 20px;
+            font-size: 48px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+           transition: background-color 0.3s ease;
+
+        }
+        button:hover {
+            background-color: #267595;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+Patient Bed Request Form</h1>
+    <form id="requestForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="0">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+ <label for="contact_number">Contact Number:</label>
+        <input type="tel" id="contact_number" name="contact_number" required pattern="[0-9]{10}" placeholder="1234567890">
+
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <script>
+        document.getElementById('requestForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const requestData = {};
+            formData.forEach((value, key) => {
+                requestData[key] = value;
+            });
+
+            // Get existing waitlist from local storage
+            let waitlist = JSON.parse(localStorage.getItem('waitlist')) || [];
+            
+            // Add new request to waitlist
+            waitlist.push({
+                ...requestData,
+                status: 'Pending',
+                comments: 'Awaiting approval from staff.'
+            });
+
+            // Save updated waitlist to local storage
+            localStorage.setItem('waitlist', JSON.stringify(waitlist));
+
+            // Optionally, redirect to the waitlist page
+            window.location.href = 'waitlist.html';
+        });
+    </script>
+</body>
+</html>

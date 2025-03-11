@@ -1,0 +1,105 @@
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack the navbar and content vertically */
+    padding: 0; /* Reset padding, controlled by navbar and main-container */
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    padding: 10px;
+    width: 100%;
+}
+
+.navbar .left, .navbar .right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.navbar img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.navbar .right {
+    margin-left: auto;
+}
+
+.navbar a:hover {
+    background-color: rgb(234, 138, 138);
+}
+
+/* Main container to center the availability info and button */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Stack availability-info and button vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: calc(100vh - 60px); /* Adjust height to accommodate navbar */
+    padding: 20px;
+}
+
+/* Centered Availability Info */
+.availability-info {
+    width: 300px; /* Fixed width for the box */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the box */
+    margin-bottom: 20px; /* Space between info and button */
+}
+
+.availability-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.availability-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Style for the "Book Your Bed" button */
+#booking-bed {
+    background-color: red; 
+    color: black; 
+    padding: 15px 25px; 
+    margin: 20px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    display: inline-block; 
+    font-size: 18px; 
+    text-align: center; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#booking-bed:hover {
+    background-color: darkred; 
+    color: white; 
+}
+

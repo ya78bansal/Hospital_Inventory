@@ -1,0 +1,124 @@
+/* Add background image */
+body {
+    background-image: url('/images/opd3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    position: relative;
+}
+
+/* Orange translucent overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 165, 0, 0.5); /* Orange with 50% opacity */
+    z-index: 1;
+}
+
+/* Ensure all other content is above the overlay */
+* {
+    position: relative;
+    z-index: 2;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f4f4f9; */
+    margin: 0;
+    /* padding: 20px; */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color:rgba(255, 106, 0, 0.5) ;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top:5em;
+}
+
+h1 {
+    text-align: center;
+    color: #090909;
+}
+
+h2 {
+    color: #242424;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    background-color: rgb(230, 226, 224);
+}
+
+#slot-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.slot {
+    padding: 10px;
+    background-color: #e0f7fa;
+    border: 1px solid #00bcd4;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.slot.full {
+    background-color: #ffccbc;
+    border-color: #ff5722;
+    cursor: not-allowed;
+}
+
+#summary-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+/* Navbar container styling */
+nav {
+    background-color:rgba(255, 106, 0, 0.5); /* Background color of the navbar */
+    padding: 10px 20px;     /* Padding around the navbar */
+}
+
+/* Navbar list styling */
+nav ul {
+    list-style: none;       /* Remove default bullet points */
+    margin: 0;              /* Remove default margin */
+    padding: 0;             /* Remove default padding */
+    display: flex;          /* Arrange list items horizontally */
+    justify-content: center; /* Center align the items */
+}
+
+/* Navbar list item styling */
+nav ul li {
+    margin: 0 15px;         /* Space between the list items */
+}
+
+/* Navbar link styling */
+nav ul li a {
+    text-decoration: none;  /* Remove underline from links */
+    color: #fff;            /* Text color for the links */
+    font-size: 16px;        /* Font size */
+    font-weight: bold;      /* Font weight for emphasis */
+    padding: 8px 15px;      /* Padding around the link */
+    border-radius: 4px;     /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Navbar link hover effect */
+nav ul li a:hover {
+    background-color: rgba(255, 89, 0, 0.5); /* Background color on hover */
+}
+

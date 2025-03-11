@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Availability</title>
+    <link rel="stylesheet" href="/CSS/availability.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="/images/hospital.webp" alt="Bed Icon"> <!-- Add your bed image source here -->
+            <a href="#">Hospital Bed Booking</a>
+        </div>
+        <div class="right">
+            <a href="#">Home</a>
+            <a href="waitlist.html">Check Status</a>
+            <a href="#">About Us</a>
+            <a href="#">FAQs</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Centered Availability Info -->
+        <div id="availability-info" class="availability-info">
+            <h2 id="ward-name">Ward Name</h2>
+            <p>Total Beds: <span id="total-beds">50</span></p>
+            <p>Available Beds: <span id="available-beds">20</span></p>
+        </div>
+        <!-- "Book Your Bed" button -->
+       <a href="request-from.html" id="booking-bed">
+            Book Your Bed
+         </a>
+       
+    </div>
+
+    <script src="/JS/availability.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital OPD Booking</title>
+    <link rel="stylesheet" href="/CSS/opd.css">
+</head>
+<body>
+    <header></header>
+        <nav>
+            <ul>
+                <li><a href="opd.html">Book OPD</a></li>
+                <li><a href="diagnostics.html">Book Tests & Scans</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>OPD Booking System</h1>
+
+        <!-- Step 1: Select Hospital -->
+        <div id="step1">
+            <h2>Select Hospital</h2>
+            <select id="hospital-select" onchange="loadDepartments()">
+                <option value="">Select a Hospital</option>
+            </select>
+        </div>
+
+        <!-- Step 2: Select Department -->
+        <div id="step2" style="display:none;">
+            <h2>Select Department</h2>
+            <select id="department-select" onchange="loadDoctors()">
+                <option value="">Select a Department</option>
+            </select>
+        </div>
+
+        <!-- Step 3: Select Doctor -->
+        <div id="step3" style="display:none;">
+            <h2>Select Doctor</h2>
+            <select id="doctor-select" onchange="loadSlots()">
+                <option value="">Select a Doctor</option>
+            </select>
+        </div>
+
+        <!-- Step 4: Select Slot -->
+        <div id="step4" style="display:none;">
+            <h2>Select Available Slot</h2>
+            <div id="slot-container"></div>
+        </div>
+
+        <!-- Booking Summary -->
+        <div id="booking-summary" style="display:none;">
+            <h2>Booking Summary</h2>
+            <p id="summary-text"></p>
+            <button onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script src="/JS/opd.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Request Waitlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fffafa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fffafa;
+            margin: 0;
+            font-size: 48px;
+            background-image: url('/images/background.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 200px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        } 
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-collapse: collapse;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            text-align: left;
+        }
+
+        th {
+            background-color: #34495e;
+            color: #ecf0f1;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            color: #2c3e50;
+            font-size: 15px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #ecf0f1;
+            transition: background-color 0.3s ease;
+        }
+
+        .status-approved {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .status-denied {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .approve-btn {
+            background-color: #27ae60;
+        }
+
+        .deny-btn {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bed Request Waitlist</h1>
+
+    <table id="waitlistTable">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Patient ID</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        function fetchWaitlist() {
+            const waitlist = JSON.parse(localStorage.getItem('waitlist')) || [];
+            const tableBody = document.querySelector('#waitlistTable tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            waitlist.forEach((request, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${request.name}</td>
+                    <td>${request.patient_id}</td>
+                    <td class="${getStatusClass(request.status)}">${request.status}</td>
+                    <td>
+                        ${request.status === 'Pending' ? `
+                            <button class="action-btn approve-btn" data-index="${index}">Approve</button>
+                            <button class="action-btn deny-btn" data-index="${index}">Deny</button>
+                        ` : ''}
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Add event listeners for buttons
+            document.querySelectorAll('.approve-btn').forEach(button => {
+                button.addEventListener('click', handleApprove);
+            });
+
+            document.querySelectorAll('.deny-btn').forEach(button => {
+                button.addEventListener('click', handleDeny);
+            });
+        }
+
+        function getStatusClass(status) {
+            switch (status) {
+                case 'Approved': return 'status-approved';
+                case 'Pending': return 'status-pending';
+                case 'Denied': return 'status-denied';
+                default: return '';
+            }
+        }
+
+        function handleApprove(event) {
+            const index = event.target.getAttribute('data-index');
+            updateRequestStatus(index, 'Approved');
+        }
+
+        function handleDeny(event) {
+            const index = event.target.getAttribute('data-index');
+            updateRequestStatus(index, 'Denied');
+        }
+
+        function updateRequestStatus(index, status) {
+            let waitlist = JSON.parse(localStorage.getItem('waitlist')) || [];
+            waitlist[index].status = status;
+            localStorage.setItem('waitlist', JSON.stringify(waitlist));
+            fetchWaitlist();
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchWaitlist);
+    </script>
+</body>
+</html>
+

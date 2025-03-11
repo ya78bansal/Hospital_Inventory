@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/CSS/style.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="/CSS/crousel.css">
+<link rel="stylesheet" href="/CSS/footer.css">
+
+
+<title>HospiLink</title>
+<style>
+
+
+  html,body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+   
+
+</style>
+
+
+
+<title>bluespace</title>
+
+</head>
+<body>
+  <div>
+  <div class="topnav" id="myTopnav">
+    <h1 class="logo"><u>Hospi</u><span>Link</span></h1>
+    <a href="login.html" class="active">Login</a>
+    
+    <a href="hospitalinventory.html">Inventory</a>
+    <a href="bedbooking.html">Bed Booking</a> 
+    <a href="opd.html">OPD Booking</a>
+    <a href="index.html">Home</a>
+  
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+
+
+
+   
+
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="/images/doctimg.jpg" alt="" />
+      
+      
+
+    </div>
+    <div class="swiper-slide">
+      <img src="/images/doctimg.jpg" alt="" />
+      
+     
+    </div>
+    <div class="swiper-slide">
+      <img src="/images/doctimg.jpg" alt="" />
+      
+      
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+<script>
+  var swiper = new Swiper(".mySwiperdemo", {
+    slidesPerView: 3,
+    spaceBetween: 0,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+    
+        
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+       
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 0,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+    
+        <script>
+          var swiper = new Swiper(".mySwiperdemo", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+
+
+    
+<!-- footer -->
+
+
+
+ <footer class="footer">
+   <div class="container">
+       <div class="row">
+           <div class="footer-col">
+               <h4>company</h4>
+               <ul>
+                   <li><a href="#">About us</a></li>
+                   <li><a href="#">Terms & Condition</a></li>
+                   <li><a href="#">Privacy Policy</a></li>
+                   
+               </ul>
+           </div>
+           <div class="footer-col">
+               <h4>Get help</h4>
+               <ul>
+                   <!-- <li><a href="http://wa.me/919499329135">Get In Touch</a></li> -->
+                   <li><a href="login.html">Your Profile</a></li>
+                   <li><a href="contact.html">Contact Us</a></li>
+               </ul>
+           </div>
+           <div class="footer-col">
+               <h4>Our Spots</h4>
+               <ul>
+                   <li><a href="#">OPD Booking</a></li>
+                   <li><a href="#">Bed Booking</a></li>
+                   <li><a href="#">Inventory Management</a></li>
+                  
+               </ul>
+           </div>
+           <div class="footer-col">
+           <h4>follow us</h4>
+           <div class="social-links">
+              
+               <a href="https://www.instagram.com/palak_16876?igsh=dDAzMGNnc3Vwa2Z4" target="_blank"><i class="fab fa-instagram"></i></a>
+               <a href="https://x.com/palakbansl26?t=OAHP-gBLNq_RATBPxEr4kQ&s=09"target="_blank"><i class="fa fa-twitter-square"></i></a>
+               <a href="https://www.linkedin.com/in/palak-bansal-3b6666283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+           </div>
+           </div>
+       </div>
+   </div>
+
+</footer>
+
+
+</body>
+</html>

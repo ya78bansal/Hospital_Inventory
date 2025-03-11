@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+img{
+    padding-left: 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    padding: 10px;
+}
+
+.navbar .left, .navbar .right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.navbar img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.navbar .right {
+    margin-left: auto;
+}
+
+.navbar a:hover {
+    background-color: rgb(234, 138, 138);
+}
+
+
+.dropdown {
+    max-width: 600px;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown label {
+    font-size: 1.6rem;
+    color: black;
+    font-weight: bold;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.dropdown select {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.dropdown select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.wards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ward-box {
+    background-color: #eef393;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(20% - 20px);
+}
+
+.ward-box:hover {
+    background-color: #fa5c5c;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.ward-box h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin: 30px 0;
+    font-weight: bold;
+}

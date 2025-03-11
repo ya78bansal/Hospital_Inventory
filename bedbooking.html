@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Booking</title>
+    <link rel="stylesheet" href="/CSS/bedbooking.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="/images/hospital.webp" alt="Bed Icon"> <!-- Add your bed image source here -->
+            <a href="#">Hospital Bed Booking</a>
+        </div>
+        <div class="right">
+            <a href="#">Home</a>
+            <a href="waitlist.html">Check Status</a>
+            <a href="#">About Us</a>
+            <a href="#">FAQs</a>
+            <a href="stafflogin.html">Staff Login</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <label for="hospital">Select Hospital:</label>
+        <select id="hospital" onchange="loadWards()">
+            <option value="">--Select Hospital--</option>
+            <option value="hospital1">Hospital 1</option>
+            <option value="hospital2">Hospital 2</option>
+            <option value="hospital3">Hospital 3</option>
+        </select>
+    </div>
+    <div id="message" class="message"></div>
+    <div id="wards-container" class="wards-container"></div>
+    <script src="/JS/scriptsss.js"></script>
+</body>
+</html>

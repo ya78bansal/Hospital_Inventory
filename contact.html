@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BlueSpace</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/CSS/contact.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+   
+</head>
+<body>
+  <div>
+    <div class="topnav" id="myTopnav">
+      <h1 class="logo"><u>Hospital</u><span>Mate</span></h1>
+      <a href="login.html" class="active">Login</a>
+      <a href="hospitalinventory.html">Inventory</a>
+      <a href="bedbooking.html">Bed Booking</a> 
+      <a href="opd.html">OPD Booking</a>
+      <a href="index.html">Home</a>
+    
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+    <section id="contact">
+  
+        <h1 class="section-header">Contact  Us</h1>
+        
+        <div class="contact-wrapper">
+ <div class="direct-contact-container">
+      
+              <ul class="contact-list">
+                 <h1>Address:</h1>
+                  <h4 class="tou"><pre> 89, connaught street,
+ Delhi-110001</pre></h4>
+                <u>________________</u>
+ <h1>Email:</h1><h4> yashbansal4065@gmail.com</h4>
+                <u>________________</u>
+                 <h1>Phone:</h1>
+                  <h4>91-6376647848</h4>
+              </ul>
+      
+             <pre>
+
+
+             </pre>
+      
+              <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+      
+            </div>
+
+        
+       
+          
+          <form id="contact-form" class="form-horizontal" role="form">
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="number" class="form-control" id="number" placeholder="Mobile No." name="number" maxlength="10" value="" required>
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <select name="Destination" id="Destination" placeholder="Destination" value="" required>
+                    <option value="">--Select Destination--</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="seychelles">Seychelles</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="sinagapore">Singapore</option>
+                </select>
+              </div>
+            </div>
+
+      
+            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+            
+            
+            
+
+            <input type="submit" value="Submit">
+          </form>
+          
+        
+          
+           
+          
+        </div>
+        
+    </section>
+
+    <script>
+    document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
+
+        </script>
+        
+        
+        
+        <footer class="footer">
+          <div class="container">
+              <div class="row">
+                  <div class="footer-col">
+                      <h4>company</h4>
+                      <ul>
+                          <li><a href="#">About us</a></li>
+                          <li><a href="#">Terms & Condition</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          
+                      </ul>
+                  </div>
+                  <div class="footer-col">
+                      <h4>Get help</h4>
+                      <ul>
+                          <!-- <li><a href="http://wa.me/919499329135">Get In Touch</a></li> -->
+                          <li><a href="login.html">Your Profile</a></li>
+                          <li><a href="contact.html">Contact Us</a></li>
+                      </ul>
+                  </div>
+                  <div class="footer-col">
+                      <h4>Our Spots</h4>
+                      <ul>
+                          <li><a href="#">OPD Booking</a></li>
+                          <li><a href="#">Bed Booking</a></li>
+                          <li><a href="#">Inventory Management</a></li>
+                         
+                      </ul>
+                  </div>
+                  <div class="footer-col">
+                  <h4>follow us</h4>
+                  <div class="social-links">
+                     
+                      <a href="https://www.instagram.com/palak_16876?igsh=dDAzMGNnc3Vwa2Z4" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a href="https://x.com/palakbansl26?t=OAHP-gBLNq_RATBPxEr4kQ&s=09"target="_blank"><i class="fa fa-twitter-square"></i></a>
+                      <a href="https://www.linkedin.com/in/palak-bansal-3b6666283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                  </div>
+              </div>
+          </div>
+       
+       </footer>
+</body>
+</html>
